@@ -5,7 +5,7 @@ import time
 
 # Configure the DDS Connector from the XML configuration file
 with Connector(config_name="MyParticipantLibrary::MyPubParticipant",
-               url="chtcht.xml") as connector:
+               url="USER_QOS_PROFILES.xml") as connector:
 
     # Get the DDS DataWriter
     output = connector.get_output("MyPublisher::MyDataWriter")

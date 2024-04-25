@@ -9,7 +9,7 @@
     "useAsSnippetIfName": false,
     "enableValidation": true
   },
-  "ui_lastSaveTime": "25/4/2024 @ 13:26:32",
+  "ui_lastSaveTime": "25/4/2024 @ 14:56:57",
   "ui_creationDate": "25/4/2024 @ 13:23:46",
   "ui_creationSysDVersion": "7.2.0",
   "ui_projectNotes": "",
@@ -26,6 +26,11 @@
     },
     {
       "path": "chtcht.xml",
+      "readonly": false,
+      "builtin": false
+    },
+    {
+      "path": "USER_QOS_PROFILES.xml",
       "readonly": false,
       "builtin": false
     }

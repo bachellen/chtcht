@@ -2,11 +2,12 @@
 
 from flask import Blueprint, request, jsonify
 import firebase_admin
-from firebase_admin import auth
+from firebase_admin import auth, credentials, firestore
 
 auth_blueprint = Blueprint('auth', __name__)
-firebase_admin.initialize_app()
+firebase_admin.initialize_app(credentials.Certificate("serviceAccountKey.json"))
 
+db = firestore.client()
 
 @auth_blueprint.route('/register', methods=['POST'])
 def register():
@@ -16,6 +17,19 @@ def register():
             email=data['email'],
             password=data['password']
         )
+        first_name = data['first_name']
+        last_name = data['last_name']  
+        # Add user to Firestore users collection
+        user_data = {
+            'userid': user.uid,
+            'email': user.email,
+            'password' :user.password,
+            'first_name': first_name,
+            'last_name': last_name,
+            'created_at': firestore.SERVER_TIMESTAMP,
+            'last_login': None,
+      }
+        db.collection('users').document(user.uid).set(user_data)
         return jsonify({'message': 'User registered successfully', 'uid': user.uid}), 201
     except ValueError as e:
         return jsonify({'error': str(e)}), 400

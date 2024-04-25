@@ -10,7 +10,7 @@ db = firestore.client()
 
 # Initialize DDS Connector for real-time messaging
 connector = Connector(config_name="MyParticipantLibrary::MyPubParticipant",
-                      url=os.path.join(os.path.dirname(__file__), 'chtcht.xml'))
+                      url=os.path.join(os.path.dirname(__file__), 'USER_QOS_PROFILES.xml'))
 output = connector.get_output("MyPublisher::MyChatWriter")
 input = connector.get_input("MySubscriber::MyChatReader")
 

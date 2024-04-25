@@ -4,7 +4,7 @@ from rticonnextdds_connector import Connector
 
 # Configure the DDS Connector from the XML configuration file
 with Connector(config_name="MyParticipantLibrary::MySubParticipant",
-               url="chtcht.xml") as connector:
+               url="USER_QOS_PROFILES.xml") as connector:
 
     # Get the DDS DataReader
     input = connector.get_input("MySubscriber::MyDataReader")
