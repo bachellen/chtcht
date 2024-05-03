@@ -1,11 +1,27 @@
 # app/blueprints/auth.py
 
 from flask import Blueprint, request, jsonify
+import pyrebase
 import firebase_admin
-from firebase_admin import auth, credentials, firestore
+from firebase_admin import  credentials, firestore
 
 auth_blueprint = Blueprint('auth', __name__)
-firebase_admin.initialize_app(credentials.Certificate("serviceAccountKey.json"))
+
+cred = credentials.Certificate('serviceAccountKey.json')
+firebase_admin.initialize_app(cred)
+
+config = {
+    "apiKey": "AIzaSyDC1lNXAFbRZTbb9h2jPLsmQNl1kPKUmd0",
+    "authDomain": "chtcht-18e13.firebaseapp.com",
+    "projectId": "chtcht-18e13",
+    "storageBucket": "chtcht-18e13.appspot.com",
+    "messagingSenderId": "83880361772",
+    "appId": "1:83880361772:web:12fa8a0cdc852660753689",
+    "measurementId": "G-SFK6CSQY0G",
+    "databaseURL": "https://chtcht-18e13.firebaseio.com"
+}
+firebase = pyrebase.initialize_app(config)
+auth = firebase.auth()
 
 db = firestore.client()
 
@@ -13,9 +29,9 @@ db = firestore.client()
 def register():
     data = request.json
     try:
-        user = auth.create_user(
-            email=data['email'],
-            password=data['password']
+        user = auth.create_user_with_email_and_password(
+            data['email'],
+            data['password']
         )
         first_name = data['first_name']
         last_name = data['last_name']  
@@ -33,7 +49,7 @@ def register():
         return jsonify({'message': 'User registered successfully', 'uid': user.uid}), 201
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
-    except firebase_admin.auth.UserAlreadyExistsError:
+    except auth.UserAlreadyExistsError:
         return jsonify({'error': 'User already exists'}), 400
     except Exception as e:
         return jsonify({'error': 'Failed to register user', 'details': str(e)}), 500
@@ -42,19 +58,11 @@ def register():
 def login():
     data = request.json
     try:
-        user = auth.get_user_by_email(data['email'])
-
-        # Authenticate user with Firebase
-        user = auth.authenticate(email=data['email'], password=data['password'])
+        user = auth.sign_in_with_email_and_password(data['email'], data['password'])
 
         if user:
-            return jsonify({'message': 'Login successful', 'uid': user.uid}), 200
+            return jsonify({'message': 'Login successful', 'token': user['idToken']}), 200
         else:
             return jsonify({'error': 'Invalid credentials'}), 401
-
-    except auth.UserNotFoundError:
-        return jsonify({'error': 'User not found'}), 404
-    except auth.InvalidCredentialsError:
-        return jsonify({'error': 'Invalid credentials'}), 401
     except Exception as e:
-        return jsonify({'error': 'Failed to log in', 'details': str(e)}), 500
+        return jsonify({'error': 'Failed to log in', 'details': str(e)}), 401

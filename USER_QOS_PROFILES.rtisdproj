@@ -1,5 +1,5 @@
 {
-  "ui_projectName": "chtcht",
+  "ui_projectName": "USER_QOS_PROFILES",
   "ui_settings": {
     "confirmDelete": true,
     "showEZSecure": false,
@@ -9,8 +9,8 @@
     "useAsSnippetIfName": false,
     "enableValidation": true
   },
-  "ui_lastSaveTime": "25/4/2024 @ 14:56:57",
-  "ui_creationDate": "25/4/2024 @ 13:23:46",
+  "ui_lastSaveTime": "1/5/2024 @ 11:48:54",
+  "ui_creationDate": "28/4/2024 @ 21:24:54",
   "ui_creationSysDVersion": "7.2.0",
   "ui_projectNotes": "",
   "ui_include": [
@@ -25,15 +25,10 @@
       "builtin": true
     },
     {
-      "path": "chtcht.xml",
-      "readonly": false,
-      "builtin": false
-    },
-    {
       "path": "USER_QOS_PROFILES.xml",
       "readonly": false,
       "builtin": false
     }
   ],
-  "ui_projectGUID": "42b0be8c-4110-d319-358d-ca7e407f9104"
+  "ui_projectGUID": "fc36089f-41a6-df1b-3f40-05af739952a3"
 }

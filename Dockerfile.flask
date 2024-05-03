@@ -41,8 +41,8 @@ ENV FLASK_APP=app:create_app
 ENV FLASK_RUN_HOST=0.0.0.0
 
 # Make port 5000 available to the world outside this container
-EXPOSE 5000
+EXPOSE 3000
 
 # Define the command to run your app using flask
 # 'flask run' serves the app at http://localhost:5000 by default
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=3000"]
