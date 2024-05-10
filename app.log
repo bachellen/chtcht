@@ -1,0 +1,92 @@
+2024-05-10 17:49:06,926 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 17:49:06,926 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 17:49:24,251 - INFO - Publishing message: {'text': 'Hello, world!'}
+2024-05-10 17:49:24,251 - INFO - 127.0.0.1 - - [10/May/2024 17:49:24] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 17:50:08,617 - INFO - Simulating message subscription
+2024-05-10 17:50:08,618 - INFO - 127.0.0.1 - - [10/May/2024 17:50:08] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 19:30:58,079 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 19:30:58,079 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 19:31:15,270 - INFO - Published message: Default Message
+2024-05-10 19:31:15,271 - INFO - 127.0.0.1 - - [10/May/2024 19:31:15] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 19:31:38,852 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 24, in subscribe
+    response = subscriber.pull(subscription_path, max_messages=10, return_immediately=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/google/pubsub_v1/services/subscriber/client.py", line 1698, in pull
+    raise ValueError(
+ValueError: If the `request` argument is set, then none of the individual field arguments should be set.
+2024-05-10 19:31:38,855 - INFO - 127.0.0.1 - - [10/May/2024 19:31:38] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-10 19:33:36,702 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 19:33:36,702 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 19:33:48,702 - INFO - Published message: Default Message
+2024-05-10 19:33:48,703 - INFO - 127.0.0.1 - - [10/May/2024 19:33:48] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 19:34:00,204 - INFO - Received message: Default Message
+2024-05-10 19:34:00,324 - INFO - 127.0.0.1 - - [10/May/2024 19:34:00] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 19:39:23,485 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 19:39:23,485 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 19:40:23,963 - ERROR - Failed to receive message. Using default.
+2024-05-10 19:40:23,963 - INFO - Publishing message: Default Message
+2024-05-10 19:40:23,963 - INFO - 127.0.0.1 - - [10/May/2024 19:40:23] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 19:40:32,499 - INFO - Received message: Default Message
+2024-05-10 19:40:32,619 - INFO - 127.0.0.1 - - [10/May/2024 19:40:32] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 19:41:49,891 - INFO - Publishing message: Hello, World
+2024-05-10 19:41:49,892 - INFO - 127.0.0.1 - - [10/May/2024 19:41:49] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 19:42:00,372 - ERROR - Failed to subscribe and pull messages: 400 You have not specified an ack ID in the request.
+2024-05-10 19:42:00,373 - INFO - 127.0.0.1 - - [10/May/2024 19:42:00] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-10 20:07:39,353 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 20:07:39,353 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 20:07:42,937 - ERROR - Failed to receive message. Using default. Received data: {"text": "Hello, world!"}
+2024-05-10 20:07:42,937 - INFO - Publishing message: No Message!
+2024-05-10 20:07:42,937 - INFO - 127.0.0.1 - - [10/May/2024 20:07:42] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:08:05,334 - INFO - No messages to acknowledge.
+2024-05-10 20:08:05,335 - INFO - 127.0.0.1 - - [10/May/2024 20:08:05] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 20:14:05,832 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 20:14:05,832 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 20:14:11,124 - INFO - Publishing message: Hello, World
+2024-05-10 20:14:11,124 - INFO - 127.0.0.1 - - [10/May/2024 20:14:11] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:14:32,410 - INFO - No messages to acknowledge.
+2024-05-10 20:14:32,411 - INFO - 127.0.0.1 - - [10/May/2024 20:14:32] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 20:14:58,927 - INFO - No messages to acknowledge.
+2024-05-10 20:14:58,928 - INFO - 127.0.0.1 - - [10/May/2024 20:14:58] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 20:17:27,464 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 20:17:27,464 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 20:17:31,786 - INFO - Publishing message: Hello, World
+2024-05-10 20:17:31,786 - INFO - 127.0.0.1 - - [10/May/2024 20:17:31] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:17:55,057 - INFO - No messages to acknowledge.
+2024-05-10 20:17:55,058 - INFO - 127.0.0.1 - - [10/May/2024 20:17:55] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 20:18:34,213 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 20:18:34,213 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 20:19:19,458 - INFO - Publishing message: Hello, World
+2024-05-10 20:19:19,459 - INFO - 127.0.0.1 - - [10/May/2024 20:19:19] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:19:43,796 - INFO - Publishing message: Hello, World
+2024-05-10 20:19:43,797 - INFO - 127.0.0.1 - - [10/May/2024 20:19:43] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:20:13,104 - INFO - No messages to acknowledge.
+2024-05-10 20:20:13,106 - INFO - 127.0.0.1 - - [10/May/2024 20:20:13] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-10 20:25:07,414 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-10 20:25:07,414 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-10 20:25:11,625 - INFO - Publishing message: Hello, World
+2024-05-10 20:25:12,000 - INFO - 127.0.0.1 - - [10/May/2024 20:25:12] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-10 20:25:23,898 - INFO - Acknowledged 1 messages.
+2024-05-10 20:25:23,899 - INFO - 127.0.0.1 - - [10/May/2024 20:25:23] "GET /messages/subscribe HTTP/1.1" 200 -
