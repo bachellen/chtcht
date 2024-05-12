@@ -1,14 +1,33 @@
 # app/__init__.py
+from datetime import timedelta
 import logging
-
 from flask import Flask
 from .blueprints.auth import auth_blueprint
 from .blueprints.message import message_blueprint
-from .blueprints.users import users_blueprint
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-def create_app():
+
+def create_app(test_config=None):
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
+    app.config['SESSION_COOKIE_SECURE'] = True
+    app.config['SESSION_COOKIE_HTTPONLY'] = True
+    app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+    app.config.update(
+        SESSION_COOKIE_SECURE=True,
+        SESSION_COOKIE_HTTPONLY=True
+    )
+    app.config['FIREBASE_API_KEY'] = os.getenv('FIREBASE_API_KEY')
+    # print("Configured API Key:", app.config['FIREBASE_API_KEY'])  # Debugging print
 
+
+    if test_config:
+        app.config.update(test_config)
+    if test_config:
+        app.config.update(test_config)
     # Configure logging
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(message)s',
@@ -20,7 +39,6 @@ def create_app():
     # Register blueprints
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
     app.register_blueprint(message_blueprint, url_prefix='/messages')
-    app.register_blueprint(users_blueprint, url_prefix='/users')
 
     return app
 

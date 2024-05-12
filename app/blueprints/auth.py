@@ -1,58 +1,50 @@
 # app/blueprints/auth.py
 
-from flask import Blueprint, request, jsonify
+from datetime import timedelta
+from flask import Blueprint, app, request, jsonify, session
 import pyrebase
-import firebase_admin
-from firebase_admin import  credentials, firestore
+from google.cloud import firestore
+import os
+from dotenv import load_dotenv
+
 
 auth_blueprint = Blueprint('auth', __name__)
 
-cred = credentials.Certificate('serviceAccountKey.json')
-firebase_admin.initialize_app(cred)
-
+load_dotenv()
 config = {
-    "apiKey": "AIzaSyDC1lNXAFbRZTbb9h2jPLsmQNl1kPKUmd0",
-    "authDomain": "chtcht-18e13.firebaseapp.com",
-    "projectId": "chtcht-18e13",
-    "storageBucket": "chtcht-18e13.appspot.com",
-    "messagingSenderId": "83880361772",
-    "appId": "1:83880361772:web:12fa8a0cdc852660753689",
-    "measurementId": "G-SFK6CSQY0G",
-    "databaseURL": "https://chtcht-18e13.firebaseio.com"
+    "apiKey": os.getenv("FIREBASE_API_KEY"),
+    "authDomain": os.getenv("FIREBASE_AUTH_DOMAIN"),
+    "projectId": os.getenv("FIREBASE_PROJECT_ID"),
+    "storageBucket": os.getenv("FIREBASE_STORAGE_BUCKET"),
+    "messagingSenderId": os.getenv("FIREBASE_MESSAGING_SENDER_ID"),
+    "appId": os.getenv("FIREBASE_APP_ID"),
+    "measurementId": os.getenv("FIREBASE_MEASUREMENT_ID"),
+    "databaseURL": os.getenv("FIREBASE_DATABASE_URL")
 }
+
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 
-db = firestore.client()
+db = firestore.Client(project='massive-carrier-422819-k2', database='chtcht')
 
 @auth_blueprint.route('/register', methods=['POST'])
 def register():
     data = request.json
     try:
-        user = auth.create_user_with_email_and_password(
-            data['email'],
-            data['password']
-        )
-        first_name = data['first_name']
-        last_name = data['last_name']  
-        # Add user to Firestore users collection
+        # Create user in Firebase Auth
+        user = auth.create_user_with_email_and_password(data['email'], data['password'])
+        # Prepare user data for Firestore
         user_data = {
-            'userid': user.uid,
-            'email': user.email,
-            'password' :user.password,
-            'first_name': first_name,
-            'last_name': last_name,
-            'created_at': firestore.SERVER_TIMESTAMP,
-            'last_login': None,
-      }
-        db.collection('users').document(user.uid).set(user_data)
-        return jsonify({'message': 'User registered successfully', 'uid': user.uid}), 201
-    except ValueError as e:
-        return jsonify({'error': str(e)}), 400
-    except auth.UserAlreadyExistsError:
-        return jsonify({'error': 'User already exists'}), 400
+            'email': data['email'],
+            'displayName': data.get('displayName', ''),
+            'createdAt': firestore.SERVER_TIMESTAMP,  # Sets the server timestamp
+            'additionalInfo': data.get('additionalInfo', {})  # Optional additional info
+        }
+        # Save user data in Firestore
+        db.collection('users').document(user['localId']).set(user_data)
+        return jsonify({'message': 'User registered successfully', 'userId': user['localId']}), 201
     except Exception as e:
-        return jsonify({'error': 'Failed to register user', 'details': str(e)}), 500
+        return jsonify({'error': str(e)}), 400
 
 @auth_blueprint.route('/login', methods=['POST'])
 def login():
@@ -66,3 +58,32 @@ def login():
             return jsonify({'error': 'Invalid credentials'}), 401
     except Exception as e:
         return jsonify({'error': 'Failed to log in', 'details': str(e)}), 401
+    
+@auth_blueprint.route('/reset_password', methods=['POST'])
+def reset_password():
+    email = request.json.get('email')
+    try:
+        auth.send_password_reset_email(email)
+        return jsonify({'message': 'Password reset email sent'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+    
+@auth_blueprint.route('/logout', methods=['POST'])
+def logout():
+    auth.current_user = None
+    return jsonify({'message': 'Logged out successfully'}), 200
+
+def save_user_to_firestore(user_data):
+    db.collection('users').add(user_data)
+
+@auth_blueprint.route('/user', methods=['GET'])
+def get_user():
+    user_id = session.get('user_id')
+    if not user_id:
+        return jsonify({'error': 'User not logged in'}), 401
+
+    try:
+        user = auth.get_account_info(session['token'])
+        return jsonify({'user': user}), 200
+    except Exception as e:
+        return jsonify({'error': 'Failed to retrieve user', 'details': str(e)}), 400

@@ -1,12 +1,8 @@
-serviceAccountKey.json
-config.xml
-chtcht.xml
-USER_QOS_PROFILES.xml
-.flaskenv
-rti_connext_dds-7.2.0/
 .DS_Store
 app/__pycache__
 app/blueprints/__pycache__
 env/
 __pycache__/
 .vscode/
+.env
+.env
