@@ -2,6 +2,7 @@
 from datetime import timedelta
 import logging
 from flask import Flask
+from flask_cors import CORS
 from .blueprints.auth import auth_blueprint
 from .blueprints.message import message_blueprint
 import os
@@ -11,6 +12,7 @@ load_dotenv()
 
 def create_app(test_config=None):
     app = Flask(__name__)
+    CORS(app) 
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
     app.config['SESSION_COOKIE_SECURE'] = True

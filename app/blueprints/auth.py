@@ -53,7 +53,7 @@ def login():
         user = auth.sign_in_with_email_and_password(data['email'], data['password'])
 
         if user:
-            return jsonify({'message': 'Login successful', 'token': user['idToken']}), 200
+            return jsonify({'message': 'Login successful', 'token': user['idToken'], 'user_id': user['localId']}), 200
         else:
             return jsonify({'error': 'Invalid credentials'}), 401
     except Exception as e:

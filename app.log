@@ -737,3 +737,1362 @@ AttributeError: 'NoneType' object has no attribute 'split'
 2024-05-12 21:38:23,796 - INFO - Message saved to Firestore with ID: Z8sgASyLWaHxu0SVPxee
 2024-05-12 21:44:19,700 - INFO - Message published to Pub/Sub: 9544854263694855
 2024-05-12 21:44:20,293 - INFO - Message saved to Firestore with ID: yyGrk3auW2yQPtwHFqb4
+2024-05-13 18:51:13,328 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-13 18:51:13,329 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-13 18:56:11,881 - INFO - 127.0.0.1 - - [13/May/2024 18:56:11] "POST /auth/login HTTP/1.1" 200 -
+2024-05-13 18:57:16,102 - INFO - 127.0.0.1 - - [13/May/2024 18:57:16] "POST /auth/login HTTP/1.1" 200 -
+2024-05-13 19:00:03,718 - INFO - Message published to Pub/Sub: 11078915412576288
+2024-05-13 19:00:04,986 - INFO - Message saved to Firestore with ID: BOOOKmAJP7CpsUar5ZQ5
+2024-05-13 19:00:04,987 - INFO - 127.0.0.1 - - [13/May/2024 19:00:04] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-13 19:00:52,266 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-13T19:00:02.966305'}
+2024-05-13 19:00:52,436 - INFO - Acknowledged 1 messages.
+2024-05-13 19:00:52,437 - INFO - 127.0.0.1 - - [13/May/2024 19:00:52] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-13 19:01:21,764 - INFO - Message published to Pub/Sub: 11078822369610149
+2024-05-13 19:01:21,964 - INFO - Message saved to Firestore with ID: T7fgsmvkmafsh7f6W2t7
+2024-05-13 19:01:21,965 - INFO - 127.0.0.1 - - [13/May/2024 19:01:21] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-13 19:01:30,920 - INFO - 127.0.0.1 - - [13/May/2024 19:01:30] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-13 21:57:46,454 - INFO - 127.0.0.1 - - [13/May/2024 21:57:46] "[33mGET / HTTP/1.1[0m" 404 -
+2024-05-13 21:57:46,769 - INFO - 127.0.0.1 - - [13/May/2024 21:57:46] "[33mGET / HTTP/1.1[0m" 404 -
+2024-05-14 00:12:04,833 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-14 00:12:04,833 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-14 00:27:06,884 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:27:06,888 - INFO - 127.0.0.1 - - [14/May/2024 00:27:06] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:27:29,206 - INFO - 127.0.0.1 - - [14/May/2024 00:27:29] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 00:33:09,012 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:33:09,015 - INFO - 127.0.0.1 - - [14/May/2024 00:33:09] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:33:35,368 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:33:35,370 - INFO - 127.0.0.1 - - [14/May/2024 00:33:35] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:35:16,066 - INFO - 127.0.0.1 - - [14/May/2024 00:35:16] "[33mGET /messages/messages HTTP/1.1[0m" 404 -
+2024-05-14 00:35:24,775 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:35:24,777 - INFO - 127.0.0.1 - - [14/May/2024 00:35:24] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:35:34,801 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:35:34,802 - INFO - 127.0.0.1 - - [14/May/2024 00:35:34] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:35:41,769 - INFO - 127.0.0.1 - - [14/May/2024 00:35:41] "[33mGET /messages/subscribe,{%20headers%20} HTTP/1.1[0m" 404 -
+2024-05-14 00:35:43,766 - ERROR - Exception on /messages/subscribe [GET]
+Traceback (most recent call last):
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/env/lib/python3.12/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/muhailah/chtcht/chtcht/app/blueprints/message.py", line 90, in subscribe
+    if not request.headers.get('Authorization').split('Bearer ')[1]:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+2024-05-14 00:35:43,767 - INFO - 127.0.0.1 - - [14/May/2024 00:35:43] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 00:35:45,765 - INFO - 127.0.0.1 - - [14/May/2024 00:35:45] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:35:59,168 - INFO - 127.0.0.1 - - [14/May/2024 00:35:59] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:36:42,914 - INFO - 127.0.0.1 - - [14/May/2024 00:36:42] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:40:27,134 - INFO - 127.0.0.1 - - [14/May/2024 00:40:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:48:58,231 - INFO - 127.0.0.1 - - [14/May/2024 00:48:58] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:49:23,191 - INFO - 127.0.0.1 - - [14/May/2024 00:49:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:50:27,692 - INFO - 127.0.0.1 - - [14/May/2024 00:50:27] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 00:50:33,659 - INFO - 127.0.0.1 - - [14/May/2024 00:50:33] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 00:50:43,129 - INFO - 127.0.0.1 - - [14/May/2024 00:50:43] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 00:53:02,471 - INFO - 127.0.0.1 - - [14/May/2024 00:53:02] "[31m[1mGET /auth/login HTTP/1.1[0m" 405 -
+2024-05-14 00:53:02,699 - INFO - 127.0.0.1 - - [14/May/2024 00:53:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-05-14 00:56:41,154 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-05-14 00:56:41,154 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-14 00:56:46,606 - INFO - 127.0.0.1 - - [14/May/2024 00:56:46] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 00:56:47,123 - INFO - 127.0.0.1 - - [14/May/2024 00:56:47] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 00:56:47,170 - INFO - 127.0.0.1 - - [14/May/2024 00:56:47] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:56:51,021 - INFO - 127.0.0.1 - - [14/May/2024 00:56:51] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:03,450 - INFO - 127.0.0.1 - - [14/May/2024 00:58:03] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:05,000 - INFO - 127.0.0.1 - - [14/May/2024 00:58:05] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:28,199 - INFO - 127.0.0.1 - - [14/May/2024 00:58:28] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:29,982 - INFO - 127.0.0.1 - - [14/May/2024 00:58:29] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:32,031 - INFO - 127.0.0.1 - - [14/May/2024 00:58:32] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:34,231 - INFO - 127.0.0.1 - - [14/May/2024 00:58:34] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:35,940 - INFO - 127.0.0.1 - - [14/May/2024 00:58:35] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:53,908 - INFO - 127.0.0.1 - - [14/May/2024 00:58:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 00:58:56,635 - INFO - 127.0.0.1 - - [14/May/2024 00:58:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:01:22,622 - INFO - 127.0.0.1 - - [14/May/2024 01:01:22] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:01:25,133 - INFO - 127.0.0.1 - - [14/May/2024 01:01:25] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:01:34,912 - INFO - 127.0.0.1 - - [14/May/2024 01:01:34] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:01:35,549 - INFO - 127.0.0.1 - - [14/May/2024 01:01:35] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:15:56,180 - INFO - 127.0.0.1 - - [14/May/2024 01:15:56] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:15:58,152 - INFO - 127.0.0.1 - - [14/May/2024 01:15:58] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:17:01,015 - ERROR - Failed to publish message: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 01:17:01,020 - INFO - 127.0.0.1 - - [14/May/2024 01:17:01] "[35m[1mPOST /messages/publish HTTP/1.1[0m" 500 -
+2024-05-14 01:17:16,379 - INFO - 127.0.0.1 - - [14/May/2024 01:17:16] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 01:19:05,646 - INFO - Message published to Pub/Sub: 11133365860274007
+2024-05-14 01:19:06,308 - INFO - Message saved to Firestore with ID: EbBBqD2vvyHithGjm2wb
+2024-05-14 01:19:06,309 - INFO - 127.0.0.1 - - [14/May/2024 01:19:06] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 01:19:28,101 - INFO - 127.0.0.1 - - [14/May/2024 01:19:28] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:19:29,760 - INFO - 127.0.0.1 - - [14/May/2024 01:19:29] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:27:06,631 - INFO - 127.0.0.1 - - [14/May/2024 01:27:06] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:27:08,352 - INFO - 127.0.0.1 - - [14/May/2024 01:27:08] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:32:02,053 - INFO - 127.0.0.1 - - [14/May/2024 01:32:02] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 01:32:03,713 - INFO - 127.0.0.1 - - [14/May/2024 01:32:03] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 06:34:37,978 - INFO - 127.0.0.1 - - [14/May/2024 06:34:37] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 06:34:38,360 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 06:34:38,364 - INFO - 127.0.0.1 - - [14/May/2024 06:34:38] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 11:53:30,092 - INFO - 127.0.0.1 - - [14/May/2024 11:53:30] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 11:53:30,495 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 11:53:30,500 - INFO - 127.0.0.1 - - [14/May/2024 11:53:30] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:08:44,400 - INFO - 127.0.0.1 - - [14/May/2024 12:08:44] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 12:08:44,824 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:08:44,829 - INFO - 127.0.0.1 - - [14/May/2024 12:08:44] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:09:35,545 - INFO - 127.0.0.1 - - [14/May/2024 12:09:35] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 12:09:35,945 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:09:35,950 - INFO - 127.0.0.1 - - [14/May/2024 12:09:35] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:10:33,750 - INFO - 127.0.0.1 - - [14/May/2024 12:10:33] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 12:10:34,128 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:10:34,131 - INFO - 127.0.0.1 - - [14/May/2024 12:10:34] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:10:36,767 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:10:36,771 - INFO - 127.0.0.1 - - [14/May/2024 12:10:36] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:10:38,889 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:10:38,894 - INFO - 127.0.0.1 - - [14/May/2024 12:10:38] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 12:10:46,035 - INFO - 127.0.0.1 - - [14/May/2024 12:10:46] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 12:10:46,463 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 12:10:46,465 - INFO - 127.0.0.1 - - [14/May/2024 12:10:46] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:15:16,974 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5001
+2024-05-14 14:15:16,975 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-14 14:15:49,501 - INFO - 127.0.0.1 - - [14/May/2024 14:15:49] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 14:29:27,373 - INFO - 127.0.0.1 - - [14/May/2024 14:29:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:29:27,774 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:29:27,775 - INFO - 127.0.0.1 - - [14/May/2024 14:29:27] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:30:02,066 - INFO - 127.0.0.1 - - [14/May/2024 14:30:02] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 14:30:02,929 - INFO - 127.0.0.1 - - [14/May/2024 14:30:02] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 14:30:02,960 - INFO - 127.0.0.1 - - [14/May/2024 14:30:02] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:30:07,213 - INFO - 127.0.0.1 - - [14/May/2024 14:30:07] "[33mOPTIONS /messages/messages HTTP/1.1[0m" 404 -
+2024-05-14 14:30:07,268 - INFO - 127.0.0.1 - - [14/May/2024 14:30:07] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:30:30,513 - INFO - 127.0.0.1 - - [14/May/2024 14:30:30] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:30:30,937 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:30:30,939 - INFO - 127.0.0.1 - - [14/May/2024 14:30:30] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:32:48,941 - INFO - 127.0.0.1 - - [14/May/2024 14:32:48] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:32:49,387 - INFO - 127.0.0.1 - - [14/May/2024 14:32:49] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:32:49,883 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:32:49,886 - INFO - 127.0.0.1 - - [14/May/2024 14:32:49] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:32:51,560 - INFO - 127.0.0.1 - - [14/May/2024 14:32:51] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:32:54,950 - INFO - 127.0.0.1 - - [14/May/2024 14:32:54] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:32:56,652 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T01:19:05.186767'}
+2024-05-14 14:32:56,775 - INFO - Acknowledged 1 messages.
+2024-05-14 14:32:56,777 - INFO - 127.0.0.1 - - [14/May/2024 14:32:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:53:26,291 - INFO - 127.0.0.1 - - [14/May/2024 14:53:26] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:53:27,286 - INFO - 127.0.0.1 - - [14/May/2024 14:53:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:53:27,706 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:53:27,711 - INFO - 127.0.0.1 - - [14/May/2024 14:53:27] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:53:28,366 - INFO - 127.0.0.1 - - [14/May/2024 14:53:28] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:58:22,090 - INFO - 127.0.0.1 - - [14/May/2024 14:58:22] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:58:22,204 - INFO - 127.0.0.1 - - [14/May/2024 14:58:22] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:58:22,694 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:58:22,696 - INFO - 127.0.0.1 - - [14/May/2024 14:58:22] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:58:25,034 - INFO - 127.0.0.1 - - [14/May/2024 14:58:25] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:06,535 - INFO - 127.0.0.1 - - [14/May/2024 14:59:06] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:06,676 - INFO - 127.0.0.1 - - [14/May/2024 14:59:06] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:07,073 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:59:07,074 - INFO - 127.0.0.1 - - [14/May/2024 14:59:07] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:59:08,187 - INFO - 127.0.0.1 - - [14/May/2024 14:59:08] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:55,314 - INFO - 127.0.0.1 - - [14/May/2024 14:59:55] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:55,438 - INFO - 127.0.0.1 - - [14/May/2024 14:59:55] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 14:59:55,829 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 14:59:55,830 - INFO - 127.0.0.1 - - [14/May/2024 14:59:55] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 14:59:56,962 - INFO - 127.0.0.1 - - [14/May/2024 14:59:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:01:24,795 - INFO - 127.0.0.1 - - [14/May/2024 15:01:24] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:01:25,366 - INFO - 127.0.0.1 - - [14/May/2024 15:01:25] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:01:26,014 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:01:26,016 - INFO - 127.0.0.1 - - [14/May/2024 15:01:26] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:01:26,978 - INFO - 127.0.0.1 - - [14/May/2024 15:01:26] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:02:40,095 - INFO - 127.0.0.1 - - [14/May/2024 15:02:40] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:02:40,179 - INFO - 127.0.0.1 - - [14/May/2024 15:02:40] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:02:40,909 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:02:40,910 - INFO - 127.0.0.1 - - [14/May/2024 15:02:40] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:02:41,954 - INFO - 127.0.0.1 - - [14/May/2024 15:02:41] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:02:59,646 - INFO - 127.0.0.1 - - [14/May/2024 15:02:59] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:03:00,222 - INFO - 127.0.0.1 - - [14/May/2024 15:03:00] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:03:00,275 - INFO - 127.0.0.1 - - [14/May/2024 15:03:00] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:03:00,562 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:03:00,564 - INFO - 127.0.0.1 - - [14/May/2024 15:03:00] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:03:27,879 - INFO - 127.0.0.1 - - [14/May/2024 15:03:27] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:03:27,884 - INFO - 127.0.0.1 - - [14/May/2024 15:03:27] "[31m[1mPOST /messages/publish HTTP/1.1[0m" 400 -
+2024-05-14 15:04:20,155 - INFO - 127.0.0.1 - - [14/May/2024 15:04:20] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:20,507 - INFO - 127.0.0.1 - - [14/May/2024 15:04:20] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:21,004 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:04:21,005 - INFO - 127.0.0.1 - - [14/May/2024 15:04:21] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:04:21,761 - INFO - 127.0.0.1 - - [14/May/2024 15:04:21] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:27,110 - INFO - 127.0.0.1 - - [14/May/2024 15:04:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:27,182 - INFO - 127.0.0.1 - - [14/May/2024 15:04:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:27,583 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:04:27,586 - INFO - 127.0.0.1 - - [14/May/2024 15:04:27] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:04:28,740 - INFO - 127.0.0.1 - - [14/May/2024 15:04:28] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:36,306 - INFO - 127.0.0.1 - - [14/May/2024 15:04:36] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:36,425 - INFO - 127.0.0.1 - - [14/May/2024 15:04:36] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:36,763 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:04:36,764 - INFO - 127.0.0.1 - - [14/May/2024 15:04:36] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:04:37,942 - INFO - 127.0.0.1 - - [14/May/2024 15:04:37] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:40,647 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:04:40,648 - INFO - 127.0.0.1 - - [14/May/2024 15:04:40] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:04:42,884 - INFO - 127.0.0.1 - - [14/May/2024 15:04:42] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:46,755 - INFO - 127.0.0.1 - - [14/May/2024 15:04:46] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:04:47,636 - INFO - Message published to Pub/Sub: 11139957708821098
+2024-05-14 15:04:48,784 - INFO - Message saved to Firestore with ID: lxN6wi3KZmwRPVILPEgM
+2024-05-14 15:04:48,784 - INFO - 127.0.0.1 - - [14/May/2024 15:04:48] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:04:49,327 - INFO - 127.0.0.1 - - [14/May/2024 15:04:49] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:49,811 - INFO - 127.0.0.1 - - [14/May/2024 15:04:49] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:04:52,594 - INFO - 127.0.0.1 - - [14/May/2024 15:04:52] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:04:53,148 - INFO - Message published to Pub/Sub: 11138516684914345
+2024-05-14 15:04:53,212 - INFO - Message saved to Firestore with ID: Z6JJhv3eHJag98gsZwKz
+2024-05-14 15:04:53,213 - INFO - 127.0.0.1 - - [14/May/2024 15:04:53] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:05:25,831 - INFO - 127.0.0.1 - - [14/May/2024 15:05:25] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:05:25,936 - INFO - 127.0.0.1 - - [14/May/2024 15:05:25] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:05:26,286 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:05:26,288 - INFO - 127.0.0.1 - - [14/May/2024 15:05:26] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:05:27,277 - INFO - 127.0.0.1 - - [14/May/2024 15:05:27] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:06:36,327 - INFO - 127.0.0.1 - - [14/May/2024 15:06:36] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:06:36,971 - INFO - Message published to Pub/Sub: 11138205762946396
+2024-05-14 15:06:37,027 - INFO - Message saved to Firestore with ID: m36BSrG6cGBbsldzWIY5
+2024-05-14 15:06:37,028 - INFO - 127.0.0.1 - - [14/May/2024 15:06:37] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:08:45,876 - INFO - 127.0.0.1 - - [14/May/2024 15:08:45] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:08:46,496 - INFO - Message published to Pub/Sub: 11140151476647601
+2024-05-14 15:08:46,595 - INFO - Message saved to Firestore with ID: ICyFh7DVPcHyT4MTlVsK
+2024-05-14 15:08:46,597 - INFO - 127.0.0.1 - - [14/May/2024 15:08:46] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:26:53,890 - INFO - 127.0.0.1 - - [14/May/2024 15:26:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:26:54,014 - INFO - 127.0.0.1 - - [14/May/2024 15:26:54] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:26:54,479 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:26:54,480 - INFO - 127.0.0.1 - - [14/May/2024 15:26:54] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:26:56,680 - INFO - 127.0.0.1 - - [14/May/2024 15:26:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:27:29,958 - INFO - 127.0.0.1 - - [14/May/2024 15:27:29] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:27:30,055 - INFO - 127.0.0.1 - - [14/May/2024 15:27:30] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:27:30,608 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:27:30,613 - INFO - 127.0.0.1 - - [14/May/2024 15:27:30] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:27:31,136 - INFO - 127.0.0.1 - - [14/May/2024 15:27:31] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:10,314 - INFO - 127.0.0.1 - - [14/May/2024 15:29:10] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:10,572 - INFO - 127.0.0.1 - - [14/May/2024 15:29:10] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:10,953 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:10,954 - INFO - 127.0.0.1 - - [14/May/2024 15:29:10] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:12,157 - INFO - 127.0.0.1 - - [14/May/2024 15:29:12] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:30,856 - INFO - 127.0.0.1 - - [14/May/2024 15:29:30] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:30,860 - INFO - 127.0.0.1 - - [14/May/2024 15:29:30] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:31,223 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:31,225 - INFO - 127.0.0.1 - - [14/May/2024 15:29:31] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:31,466 - INFO - 127.0.0.1 - - [14/May/2024 15:29:31] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:35,592 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:35,596 - INFO - 127.0.0.1 - - [14/May/2024 15:29:35] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:36,425 - INFO - 127.0.0.1 - - [14/May/2024 15:29:36] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:36,601 - INFO - 127.0.0.1 - - [14/May/2024 15:29:36] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:37,240 - INFO - 127.0.0.1 - - [14/May/2024 15:29:37] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:37,698 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:37,701 - INFO - 127.0.0.1 - - [14/May/2024 15:29:37] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:38,459 - INFO - 127.0.0.1 - - [14/May/2024 15:29:38] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:43,556 - INFO - 127.0.0.1 - - [14/May/2024 15:29:43] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:44,205 - INFO - 127.0.0.1 - - [14/May/2024 15:29:44] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:44,635 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:44,637 - INFO - 127.0.0.1 - - [14/May/2024 15:29:44] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:45,161 - INFO - 127.0.0.1 - - [14/May/2024 15:29:45] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:46,577 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:46,578 - INFO - 127.0.0.1 - - [14/May/2024 15:29:46] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:47,383 - INFO - 127.0.0.1 - - [14/May/2024 15:29:47] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:52,508 - INFO - 127.0.0.1 - - [14/May/2024 15:29:52] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:53,167 - INFO - 127.0.0.1 - - [14/May/2024 15:29:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:53,646 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:53,651 - INFO - 127.0.0.1 - - [14/May/2024 15:29:53] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:54,554 - INFO - 127.0.0.1 - - [14/May/2024 15:29:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:29:54,628 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:29:54,630 - INFO - 127.0.0.1 - - [14/May/2024 15:29:54] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:29:55,658 - INFO - 127.0.0.1 - - [14/May/2024 15:29:55] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:30:13,574 - INFO - 127.0.0.1 - - [14/May/2024 15:30:13] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:30:14,396 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:30:14,401 - INFO - 127.0.0.1 - - [14/May/2024 15:30:14] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:30:43,666 - INFO - 127.0.0.1 - - [14/May/2024 15:30:43] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:30:44,211 - INFO - 127.0.0.1 - - [14/May/2024 15:30:44] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:30:46,857 - INFO - 127.0.0.1 - - [14/May/2024 15:30:46] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:30:48,430 - INFO - 127.0.0.1 - - [14/May/2024 15:30:48] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:01,001 - INFO - 127.0.0.1 - - [14/May/2024 15:31:01] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:01,773 - INFO - 127.0.0.1 - - [14/May/2024 15:31:01] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:45,647 - INFO - 127.0.0.1 - - [14/May/2024 15:31:45] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:47,886 - INFO - 127.0.0.1 - - [14/May/2024 15:31:47] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:48,256 - INFO - 127.0.0.1 - - [14/May/2024 15:31:48] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:53,979 - INFO - 127.0.0.1 - - [14/May/2024 15:31:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:31:54,547 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:31:54,549 - INFO - 127.0.0.1 - - [14/May/2024 15:31:54] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:31:57,919 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:31:57,923 - INFO - 127.0.0.1 - - [14/May/2024 15:31:57] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:33:00,363 - INFO - 127.0.0.1 - - [14/May/2024 15:33:00] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:33:01,796 - INFO - 127.0.0.1 - - [14/May/2024 15:33:01] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:33:20,211 - INFO - 127.0.0.1 - - [14/May/2024 15:33:20] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:33:20,768 - INFO - 127.0.0.1 - - [14/May/2024 15:33:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:38:07,488 - INFO - 127.0.0.1 - - [14/May/2024 15:38:07] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:38:07,864 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:38:07,867 - INFO - 127.0.0.1 - - [14/May/2024 15:38:07] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:38:08,790 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 15:38:08,794 - INFO - 127.0.0.1 - - [14/May/2024 15:38:08] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 15:40:07,095 - INFO - 127.0.0.1 - - [14/May/2024 15:40:07] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 15:40:07,636 - INFO - 127.0.0.1 - - [14/May/2024 15:40:07] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 15:40:07,673 - INFO - 127.0.0.1 - - [14/May/2024 15:40:07] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:40:09,490 - INFO - 127.0.0.1 - - [14/May/2024 15:40:09] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:40:09,979 - INFO - 127.0.0.1 - - [14/May/2024 15:40:09] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:40:11,413 - INFO - Message published to Pub/Sub: 11140389746836626
+2024-05-14 15:40:11,703 - INFO - Message saved to Firestore with ID: LY0pGDPZ4uyYW4FystYl
+2024-05-14 15:40:11,704 - INFO - 127.0.0.1 - - [14/May/2024 15:40:11] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 15:40:13,109 - INFO - 127.0.0.1 - - [14/May/2024 15:40:13] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:40:13,803 - INFO - 127.0.0.1 - - [14/May/2024 15:40:13] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:44:06,537 - INFO - 127.0.0.1 - - [14/May/2024 15:44:06] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 15:44:08,186 - INFO - 127.0.0.1 - - [14/May/2024 15:44:08] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:18,110 - INFO - 127.0.0.1 - - [14/May/2024 16:04:18] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:20,327 - INFO - 127.0.0.1 - - [14/May/2024 16:04:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:24,429 - INFO - 127.0.0.1 - - [14/May/2024 16:04:24] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:25,048 - INFO - 127.0.0.1 - - [14/May/2024 16:04:25] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:39,428 - INFO - 127.0.0.1 - - [14/May/2024 16:04:39] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:41,250 - INFO - 127.0.0.1 - - [14/May/2024 16:04:41] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:43,803 - INFO - 127.0.0.1 - - [14/May/2024 16:04:43] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:52,985 - INFO - 127.0.0.1 - - [14/May/2024 16:04:52] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:54,027 - INFO - 127.0.0.1 - - [14/May/2024 16:04:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:04:57,161 - INFO - 127.0.0.1 - - [14/May/2024 16:04:57] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:04:57,861 - INFO - Message published to Pub/Sub: 11140152287176276
+2024-05-14 16:04:58,397 - INFO - Message saved to Firestore with ID: 3Rcfzrz9wsr8H7pNmH8y
+2024-05-14 16:04:58,397 - INFO - 127.0.0.1 - - [14/May/2024 16:04:58] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:06:24,428 - INFO - 127.0.0.1 - - [14/May/2024 16:06:24] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:06:25,397 - INFO - Message published to Pub/Sub: 11085847348771986
+2024-05-14 16:06:25,482 - INFO - Message saved to Firestore with ID: zwg8rR3vV3WoyWaraJZ5
+2024-05-14 16:06:25,483 - INFO - 127.0.0.1 - - [14/May/2024 16:06:25] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:07:46,573 - INFO - 127.0.0.1 - - [14/May/2024 16:07:46] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:07:48,005 - INFO - 127.0.0.1 - - [14/May/2024 16:07:48] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:07:51,748 - INFO - 127.0.0.1 - - [14/May/2024 16:07:51] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:07:52,350 - INFO - Message published to Pub/Sub: 11139635920795740
+2024-05-14 16:07:52,416 - INFO - Message saved to Firestore with ID: jOq0OZnmAldtfsoAWj4P
+2024-05-14 16:07:52,417 - INFO - 127.0.0.1 - - [14/May/2024 16:07:52] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:07:54,209 - INFO - 127.0.0.1 - - [14/May/2024 16:07:54] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:07:55,764 - INFO - 127.0.0.1 - - [14/May/2024 16:07:55] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:08:12,718 - INFO - 127.0.0.1 - - [14/May/2024 16:08:12] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:08:14,404 - INFO - 127.0.0.1 - - [14/May/2024 16:08:14] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:08:15,105 - INFO - 127.0.0.1 - - [14/May/2024 16:08:15] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:23:46,015 - INFO - 127.0.0.1 - - [14/May/2024 16:23:46] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:23:48,231 - INFO - 127.0.0.1 - - [14/May/2024 16:23:48] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:37:02,504 - INFO - 127.0.0.1 - - [14/May/2024 16:37:02] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 16:42:37,616 - ERROR - Failed to publish message: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 16:42:37,622 - INFO - 127.0.0.1 - - [14/May/2024 16:42:37] "[35m[1mPOST /messages/publish HTTP/1.1[0m" 500 -
+2024-05-14 16:43:07,358 - ERROR - Failed to publish message: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 16:43:07,362 - INFO - 127.0.0.1 - - [14/May/2024 16:43:07] "[35m[1mPOST /messages/publish HTTP/1.1[0m" 500 -
+2024-05-14 16:43:18,839 - INFO - 127.0.0.1 - - [14/May/2024 16:43:18] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 16:45:25,759 - INFO - Message published to Pub/Sub: 11139391381509062
+2024-05-14 16:45:26,308 - INFO - Message saved to Firestore with ID: 1Qz77CSR4vtyS98MNCdT
+2024-05-14 16:45:26,309 - INFO - 127.0.0.1 - - [14/May/2024 16:45:26] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:45:48,556 - INFO - 127.0.0.1 - - [14/May/2024 16:45:48] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:45:48,924 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 16:45:48,926 - INFO - 127.0.0.1 - - [14/May/2024 16:45:48] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 16:46:07,849 - INFO - 127.0.0.1 - - [14/May/2024 16:46:07] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:46:08,234 - ERROR - Failed to subscribe and pull messages: [Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key=AIzaSyDd9YRWul2zoxW4l3SNw1Pso_S5ajE4bys] {
+  "error": {
+    "code": 400,
+    "message": "INVALID_ID_TOKEN",
+    "errors": [
+      {
+        "message": "INVALID_ID_TOKEN",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+2024-05-14 16:46:08,235 - INFO - 127.0.0.1 - - [14/May/2024 16:46:08] "[35m[1mGET /messages/subscribe HTTP/1.1[0m" 500 -
+2024-05-14 16:46:29,150 - INFO - 127.0.0.1 - - [14/May/2024 16:46:29] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 16:46:29,603 - INFO - 127.0.0.1 - - [14/May/2024 16:46:29] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 16:46:29,644 - INFO - 127.0.0.1 - - [14/May/2024 16:46:29] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:46:31,630 - INFO - 127.0.0.1 - - [14/May/2024 16:46:31] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:46:49,049 - INFO - 127.0.0.1 - - [14/May/2024 16:46:49] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:46:49,619 - INFO - Message published to Pub/Sub: 11140695902059856
+2024-05-14 16:46:49,673 - INFO - Message saved to Firestore with ID: G3WRJXQdAu0DqCxh2gwn
+2024-05-14 16:46:49,675 - INFO - 127.0.0.1 - - [14/May/2024 16:46:49] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:46:54,763 - INFO - 127.0.0.1 - - [14/May/2024 16:46:54] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:46:56,420 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T16:45:25.079671'}
+2024-05-14 16:46:56,545 - INFO - Acknowledged 1 messages.
+2024-05-14 16:46:56,545 - INFO - 127.0.0.1 - - [14/May/2024 16:46:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:48:57,765 - INFO - Message published to Pub/Sub: 11139959252852807
+2024-05-14 16:48:57,848 - INFO - Message saved to Firestore with ID: ABNJiJidm9CHmK4P49Wk
+2024-05-14 16:48:57,849 - INFO - 127.0.0.1 - - [14/May/2024 16:48:57] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:49:01,690 - INFO - Message published to Pub/Sub: 11140885394444235
+2024-05-14 16:49:01,744 - INFO - Message saved to Firestore with ID: a40YQ8jBI7ogaFDvdcmb
+2024-05-14 16:49:01,745 - INFO - 127.0.0.1 - - [14/May/2024 16:49:01] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:49:03,716 - INFO - Message published to Pub/Sub: 11140713046560436
+2024-05-14 16:49:03,771 - INFO - Message saved to Firestore with ID: dXWQdhDrwLWwPc7BsGgE
+2024-05-14 16:49:03,773 - INFO - 127.0.0.1 - - [14/May/2024 16:49:03] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:49:18,434 - INFO - 127.0.0.1 - - [14/May/2024 16:49:18] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:49:20,104 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T16:48:57.556808'}
+2024-05-14 16:49:20,105 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T16:49:01.553188'}
+2024-05-14 16:49:20,105 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T16:49:03.577149'}
+2024-05-14 16:49:20,229 - INFO - Acknowledged 3 messages.
+2024-05-14 16:49:20,229 - INFO - 127.0.0.1 - - [14/May/2024 16:49:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:49:27,360 - INFO - 127.0.0.1 - - [14/May/2024 16:49:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:49:27,891 - INFO - 127.0.0.1 - - [14/May/2024 16:49:27] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:53:44,719 - INFO - 127.0.0.1 - - [14/May/2024 16:53:44] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:53:46,589 - INFO - 127.0.0.1 - - [14/May/2024 16:53:46] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:54:08,127 - INFO - 127.0.0.1 - - [14/May/2024 16:54:08] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:54:08,951 - INFO - Message published to Pub/Sub: 11140744859194148
+2024-05-14 16:54:09,174 - INFO - Message saved to Firestore with ID: NcoROYzfLSlgb8lhfRF9
+2024-05-14 16:54:09,175 - INFO - 127.0.0.1 - - [14/May/2024 16:54:09] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:54:21,605 - INFO - 127.0.0.1 - - [14/May/2024 16:54:21] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:54:22,189 - INFO - Message published to Pub/Sub: 11140462977071817
+2024-05-14 16:54:22,256 - INFO - Message saved to Firestore with ID: qlmWvfiXKHAlsyYvrNls
+2024-05-14 16:54:22,256 - INFO - 127.0.0.1 - - [14/May/2024 16:54:22] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:54:36,688 - INFO - 127.0.0.1 - - [14/May/2024 16:54:36] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:54:37,785 - INFO - 127.0.0.1 - - [14/May/2024 16:54:37] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:54:46,661 - INFO - Message published to Pub/Sub: 11140462977108826
+2024-05-14 16:54:46,695 - INFO - Message saved to Firestore with ID: QY3HqmKaVQslJ1eGQSeU
+2024-05-14 16:54:46,695 - INFO - 127.0.0.1 - - [14/May/2024 16:54:46] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 16:54:53,194 - INFO - 127.0.0.1 - - [14/May/2024 16:54:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:54:54,399 - INFO - 127.0.0.1 - - [14/May/2024 16:54:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:56:04,639 - INFO - 127.0.0.1 - - [14/May/2024 16:56:04] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:56:07,224 - INFO - 127.0.0.1 - - [14/May/2024 16:56:07] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:56:26,103 - INFO - 127.0.0.1 - - [14/May/2024 16:56:26] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:56:26,621 - INFO - 127.0.0.1 - - [14/May/2024 16:56:26] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:59:56,211 - INFO - 127.0.0.1 - - [14/May/2024 16:59:56] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 16:59:57,602 - INFO - 127.0.0.1 - - [14/May/2024 16:59:57] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:03,285 - INFO - 127.0.0.1 - - [14/May/2024 17:00:03] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:03,895 - INFO - 127.0.0.1 - - [14/May/2024 17:00:03] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:05,587 - INFO - 127.0.0.1 - - [14/May/2024 17:00:05] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:00:06,315 - INFO - Message published to Pub/Sub: 11140965782267519
+2024-05-14 17:00:06,543 - INFO - Message saved to Firestore with ID: 6zbJ4g1WMgfNlfhVr2OX
+2024-05-14 17:00:06,544 - INFO - 127.0.0.1 - - [14/May/2024 17:00:06] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:00:14,228 - INFO - Message published to Pub/Sub: 11140885765157926
+2024-05-14 17:00:14,381 - INFO - Message saved to Firestore with ID: x0MIou0fvvEHxuZhBgh8
+2024-05-14 17:00:14,382 - INFO - 127.0.0.1 - - [14/May/2024 17:00:14] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:00:17,943 - INFO - 127.0.0.1 - - [14/May/2024 17:00:17] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:18,571 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T17:00:14.089555'}
+2024-05-14 17:00:18,571 - INFO - Processed message: {'message': 'How are you', 'timestamp': '2024-05-14T16:54:46.627058'}
+2024-05-14 17:00:18,694 - INFO - Acknowledged 2 messages.
+2024-05-14 17:00:18,695 - INFO - 127.0.0.1 - - [14/May/2024 17:00:18] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:24,322 - INFO - 127.0.0.1 - - [14/May/2024 17:00:24] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:00:24,865 - INFO - Message published to Pub/Sub: 11141053659343918
+2024-05-14 17:00:24,919 - INFO - Message saved to Firestore with ID: A405C94Moc5labzpVGjK
+2024-05-14 17:00:24,920 - INFO - 127.0.0.1 - - [14/May/2024 17:00:24] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:00:41,668 - INFO - 127.0.0.1 - - [14/May/2024 17:00:41] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:43,286 - INFO - 127.0.0.1 - - [14/May/2024 17:00:43] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:00:45,038 - INFO - 127.0.0.1 - - [14/May/2024 17:00:45] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:01:24,468 - INFO - 127.0.0.1 - - [14/May/2024 17:01:24] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:01:25,750 - INFO - 127.0.0.1 - - [14/May/2024 17:01:25] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:02:07,467 - INFO - 127.0.0.1 - - [14/May/2024 17:02:07] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:02:08,384 - INFO - Message published to Pub/Sub: 11140982124293325
+2024-05-14 17:02:08,847 - INFO - Message saved to Firestore with ID: 14YY6fsX6y8bKFllf2ig
+2024-05-14 17:02:08,847 - INFO - 127.0.0.1 - - [14/May/2024 17:02:08] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:02:10,081 - INFO - Message published to Pub/Sub: 11140900740692838
+2024-05-14 17:02:10,132 - INFO - Message saved to Firestore with ID: muxUJtoaB4nXSkJVV0tM
+2024-05-14 17:02:10,133 - INFO - 127.0.0.1 - - [14/May/2024 17:02:10] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:02:11,604 - INFO - Message published to Pub/Sub: 11139250273994617
+2024-05-14 17:02:11,650 - INFO - Message saved to Firestore with ID: SIa9acN4wop7LYCGl7uD
+2024-05-14 17:02:11,651 - INFO - 127.0.0.1 - - [14/May/2024 17:02:11] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:03:04,994 - INFO - 127.0.0.1 - - [14/May/2024 17:03:04] "[31m[1mPOST /messages/subscribe HTTP/1.1[0m" 405 -
+2024-05-14 17:03:20,806 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T11:01:14.868481'}
+2024-05-14 17:03:20,933 - INFO - Acknowledged 1 messages.
+2024-05-14 17:03:20,934 - INFO - 127.0.0.1 - - [14/May/2024 17:03:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:03:33,673 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T01:38:11.434814'}
+2024-05-14 17:03:33,676 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T12:31:35.419579'}
+2024-05-14 17:03:33,676 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T21:34:51.474112'}
+2024-05-14 17:03:33,676 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T21:36:27.995678'}
+2024-05-14 17:03:33,676 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T21:44:19.101337'}
+2024-05-14 17:03:33,676 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T21:35:31.648340'}
+2024-05-14 17:03:33,679 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T01:39:40.153916'}
+2024-05-14 17:03:33,680 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T01:41:09.491289'}
+2024-05-14 17:03:33,680 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T01:43:17.960739'}
+2024-05-14 17:03:33,680 - INFO - Processed message: {'message': 'Hello, World', 'timestamp': '2024-05-12T21:38:22.780311'}
+2024-05-14 17:03:33,797 - INFO - Acknowledged 10 messages.
+2024-05-14 17:03:33,798 - INFO - 127.0.0.1 - - [14/May/2024 17:03:33] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:08:28,192 - INFO - 127.0.0.1 - - [14/May/2024 17:08:28] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:08:28,975 - INFO - Message published to Pub/Sub: 11141035226847433
+2024-05-14 17:08:29,195 - INFO - Message saved to Firestore with ID: mBUHP1wjTXzzrbOOKZFU
+2024-05-14 17:08:29,195 - INFO - 127.0.0.1 - - [14/May/2024 17:08:29] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:10:23,362 - INFO - 127.0.0.1 - - [14/May/2024 17:10:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:10:24,997 - INFO - 127.0.0.1 - - [14/May/2024 17:10:24] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:12:53,781 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5001
+2024-05-14 17:12:53,781 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-14 17:12:57,436 - INFO - 127.0.0.1 - - [14/May/2024 17:12:57] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 17:12:57,983 - INFO - 127.0.0.1 - - [14/May/2024 17:12:57] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 17:12:58,022 - INFO - 127.0.0.1 - - [14/May/2024 17:12:58] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:13:00,002 - INFO - 127.0.0.1 - - [14/May/2024 17:13:00] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:13:02,068 - INFO - 127.0.0.1 - - [14/May/2024 17:13:02] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:13:02,799 - INFO - Message published to Pub/Sub: 11139928250837251
+2024-05-14 17:13:03,600 - INFO - Message saved to Firestore with ID: OhVy6FF1kF7NMXebacMp
+2024-05-14 17:13:03,601 - INFO - 127.0.0.1 - - [14/May/2024 17:13:03] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:13:31,651 - INFO - 127.0.0.1 - - [14/May/2024 17:13:31] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:13:33,405 - INFO - 127.0.0.1 - - [14/May/2024 17:13:33] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:13:35,436 - INFO - 127.0.0.1 - - [14/May/2024 17:13:35] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:13:35,513 - INFO - 127.0.0.1 - - [14/May/2024 17:13:35] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:13:36,017 - INFO - Message published to Pub/Sub: 11140885304027492
+2024-05-14 17:13:36,077 - INFO - Message saved to Firestore with ID: 9UgYXoCudIEJ1MM2j4rA
+2024-05-14 17:13:36,078 - INFO - 127.0.0.1 - - [14/May/2024 17:13:36] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:14:02,304 - INFO - 127.0.0.1 - - [14/May/2024 17:14:02] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:14:02,868 - INFO - 127.0.0.1 - - [14/May/2024 17:14:02] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:14:30,732 - INFO - 127.0.0.1 - - [14/May/2024 17:14:30] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:14:31,546 - INFO - Message published to Pub/Sub: 11139700392052483
+2024-05-14 17:14:31,781 - INFO - Message saved to Firestore with ID: RzOqRzdxpp4MuyHt2TVm
+2024-05-14 17:14:31,782 - INFO - 127.0.0.1 - - [14/May/2024 17:14:31] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:16:36,879 - INFO - 127.0.0.1 - - [14/May/2024 17:16:36] "OPTIONS /auth/login HTTP/1.1" 200 -
+2024-05-14 17:16:37,390 - INFO - 127.0.0.1 - - [14/May/2024 17:16:37] "POST /auth/login HTTP/1.1" 200 -
+2024-05-14 17:16:37,433 - INFO - 127.0.0.1 - - [14/May/2024 17:16:37] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:16:38,822 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T13:46:49.031Z'}, 'timestamp': '2024-05-14T16:46:49.481543'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T13:54:08.120Z'}, 'timestamp': '2024-05-14T16:54:08.637387'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T14:00:05.584Z'}, 'timestamp': '2024-05-14T17:00:06.006464'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:00:24.319Z'}, 'timestamp': '2024-05-14T17:00:24.725215'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:02:07.459Z'}, 'timestamp': '2024-05-14T17:02:08.159685'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:02:09.506Z'}, 'timestamp': '2024-05-14T17:02:09.942457'}
+2024-05-14 17:16:38,823 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:02:11.089Z'}, 'timestamp': '2024-05-14T17:02:11.467864'}
+2024-05-14 17:16:38,824 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T14:08:28.185Z'}, 'timestamp': '2024-05-14T17:08:28.668066'}
+2024-05-14 17:16:38,824 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:13:02.063Z'}, 'timestamp': '2024-05-14T17:13:02.466433'}
+2024-05-14 17:16:38,824 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'f', 'timestamp': '2024-05-14T14:13:35.431Z'}, 'timestamp': '2024-05-14T17:13:35.855410'}
+2024-05-14 17:16:38,988 - INFO - Acknowledged 10 messages.
+2024-05-14 17:16:38,988 - INFO - 127.0.0.1 - - [14/May/2024 17:16:38] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:16:39,776 - INFO - 127.0.0.1 - - [14/May/2024 17:16:39] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:16:40,403 - INFO - Message published to Pub/Sub: 11140983409166610
+2024-05-14 17:16:40,460 - INFO - Message saved to Firestore with ID: CBS0HodM9A2iY5MOouR7
+2024-05-14 17:16:40,461 - INFO - 127.0.0.1 - - [14/May/2024 17:16:40] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:17:52,339 - INFO - 127.0.0.1 - - [14/May/2024 17:17:52] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:17:53,247 - INFO - 127.0.0.1 - - [14/May/2024 17:17:53] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:17:53,767 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 'd', 'timestamp': '2024-05-14T14:16:39.771Z'}, 'timestamp': '2024-05-14T17:16:40.247766'}
+2024-05-14 17:17:53,897 - INFO - Acknowledged 1 messages.
+2024-05-14 17:17:53,898 - INFO - 127.0.0.1 - - [14/May/2024 17:17:53] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:17:54,968 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'c', 'timestamp': '2024-05-14T12:04:46.745Z'}, 'timestamp': '2024-05-14T15:04:47.194024'}
+2024-05-14 17:17:54,968 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T13:04:57.154Z'}, 'timestamp': '2024-05-14T16:04:57.550262'}
+2024-05-14 17:17:54,968 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T13:54:21.602Z'}, 'timestamp': '2024-05-14T16:54:22.055869'}
+2024-05-14 17:17:54,968 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T14:14:30.725Z'}, 'timestamp': '2024-05-14T17:14:31.336219'}
+2024-05-14 17:17:55,089 - INFO - Acknowledged 4 messages.
+2024-05-14 17:17:55,090 - INFO - 127.0.0.1 - - [14/May/2024 17:17:55] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:18:04,277 - INFO - 127.0.0.1 - - [14/May/2024 17:18:04] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:18:05,275 - INFO - 127.0.0.1 - - [14/May/2024 17:18:05] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:18:58,985 - INFO - 127.0.0.1 - - [14/May/2024 17:18:58] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:18:59,003 - INFO - 127.0.0.1 - - [14/May/2024 17:18:59] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:01,943 - INFO - 127.0.0.1 - - [14/May/2024 17:19:01] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:03,254 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T12:04:52.587Z'}, 'timestamp': '2024-05-14T15:04:52.998257'}
+2024-05-14 17:19:03,254 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'f', 'timestamp': '2024-05-14T12:06:36.319Z'}, 'timestamp': '2024-05-14T15:06:36.805355'}
+2024-05-14 17:19:03,254 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T12:08:45.863Z'}, 'timestamp': '2024-05-14T15:08:46.280786'}
+2024-05-14 17:19:03,254 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'h', 'timestamp': '2024-05-14T12:40:09.972Z'}, 'timestamp': '2024-05-14T15:40:10.861834'}
+2024-05-14 17:19:03,255 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T13:06:24.419Z'}, 'timestamp': '2024-05-14T16:06:25.195165'}
+2024-05-14 17:19:03,255 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T13:07:51.739Z'}, 'timestamp': '2024-05-14T16:07:52.141249'}
+2024-05-14 17:19:03,480 - INFO - Acknowledged 6 messages.
+2024-05-14 17:19:03,482 - INFO - 127.0.0.1 - - [14/May/2024 17:19:03] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:26,348 - INFO - 127.0.0.1 - - [14/May/2024 17:19:26] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:27,192 - INFO - 127.0.0.1 - - [14/May/2024 17:19:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:27,805 - INFO - 127.0.0.1 - - [14/May/2024 17:19:27] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:19:38,377 - INFO - 127.0.0.1 - - [14/May/2024 17:19:38] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:21:23,181 - INFO - 127.0.0.1 - - [14/May/2024 17:21:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:21:23,228 - INFO - 127.0.0.1 - - [14/May/2024 17:21:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:21:24,682 - INFO - 127.0.0.1 - - [14/May/2024 17:21:24] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:21:35,401 - INFO - 127.0.0.1 - - [14/May/2024 17:21:35] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:15,919 - INFO - 127.0.0.1 - - [14/May/2024 17:22:15] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:15,963 - INFO - 127.0.0.1 - - [14/May/2024 17:22:15] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:17,718 - INFO - 127.0.0.1 - - [14/May/2024 17:22:17] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:28,046 - INFO - 127.0.0.1 - - [14/May/2024 17:22:28] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:28,149 - INFO - 127.0.0.1 - - [14/May/2024 17:22:28] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:28,414 - INFO - 127.0.0.1 - - [14/May/2024 17:22:28] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:38,807 - INFO - 127.0.0.1 - - [14/May/2024 17:22:38] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:38,921 - INFO - 127.0.0.1 - - [14/May/2024 17:22:38] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:41,001 - INFO - 127.0.0.1 - - [14/May/2024 17:22:41] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:22:41,790 - INFO - Message published to Pub/Sub: 11141207562584101
+2024-05-14 17:22:41,995 - INFO - Message saved to Firestore with ID: mSQaOuaaz0gSaUnhfOZ7
+2024-05-14 17:22:41,996 - INFO - 127.0.0.1 - - [14/May/2024 17:22:41] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:22:42,522 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:22:40.995Z'}, 'timestamp': '2024-05-14T17:22:41.373606'}
+2024-05-14 17:22:42,544 - INFO - Acknowledged 1 messages.
+2024-05-14 17:22:42,545 - INFO - 127.0.0.1 - - [14/May/2024 17:22:42] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:49,456 - INFO - 127.0.0.1 - - [14/May/2024 17:22:49] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:57,568 - INFO - 127.0.0.1 - - [14/May/2024 17:22:57] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:57,768 - INFO - 127.0.0.1 - - [14/May/2024 17:22:57] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:22:58,187 - INFO - 127.0.0.1 - - [14/May/2024 17:22:58] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:00,003 - INFO - 127.0.0.1 - - [14/May/2024 17:23:00] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:04,133 - INFO - 127.0.0.1 - - [14/May/2024 17:23:04] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:04,160 - INFO - 127.0.0.1 - - [14/May/2024 17:23:04] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:06,678 - INFO - 127.0.0.1 - - [14/May/2024 17:23:06] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:07,180 - INFO - Message published to Pub/Sub: 11085808350132815
+2024-05-14 17:23:07,232 - INFO - Message saved to Firestore with ID: DnSbv14R3KR8lXLB98qK
+2024-05-14 17:23:07,233 - INFO - 127.0.0.1 - - [14/May/2024 17:23:07] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:07,278 - INFO - 127.0.0.1 - - [14/May/2024 17:23:07] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:10,470 - INFO - 127.0.0.1 - - [14/May/2024 17:23:10] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:10,531 - INFO - Message published to Pub/Sub: 11141136964403023
+2024-05-14 17:23:10,586 - INFO - Message saved to Firestore with ID: zeLCamoTjcsr9k3oLR1d
+2024-05-14 17:23:10,587 - INFO - 127.0.0.1 - - [14/May/2024 17:23:10] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:10,622 - INFO - 127.0.0.1 - - [14/May/2024 17:23:10] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:17,983 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:23:06.674Z'}, 'timestamp': '2024-05-14T17:23:07.044955'}
+2024-05-14 17:23:18,109 - INFO - Acknowledged 1 messages.
+2024-05-14 17:23:18,110 - INFO - 127.0.0.1 - - [14/May/2024 17:23:18] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:20,977 - INFO - 127.0.0.1 - - [14/May/2024 17:23:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:22,288 - INFO - 127.0.0.1 - - [14/May/2024 17:23:22] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:23,170 - INFO - 127.0.0.1 - - [14/May/2024 17:23:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:23,597 - INFO - 127.0.0.1 - - [14/May/2024 17:23:23] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:24,084 - INFO - Message published to Pub/Sub: 11141207562631630
+2024-05-14 17:23:24,155 - INFO - Message saved to Firestore with ID: 3Vqj17ayCSpwFcWIaHk6
+2024-05-14 17:23:24,156 - INFO - 127.0.0.1 - - [14/May/2024 17:23:24] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:24,182 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:23:23.592Z'}, 'timestamp': '2024-05-14T17:23:24.052279'}
+2024-05-14 17:23:24,260 - INFO - Acknowledged 1 messages.
+2024-05-14 17:23:24,261 - INFO - 127.0.0.1 - - [14/May/2024 17:23:24] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:31,480 - INFO - 127.0.0.1 - - [14/May/2024 17:23:31] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:32,002 - INFO - 127.0.0.1 - - [14/May/2024 17:23:32] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:32,156 - INFO - 127.0.0.1 - - [14/May/2024 17:23:32] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:39,688 - INFO - 127.0.0.1 - - [14/May/2024 17:23:39] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:40,180 - INFO - 127.0.0.1 - - [14/May/2024 17:23:40] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:40,960 - INFO - 127.0.0.1 - - [14/May/2024 17:23:40] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:41,559 - INFO - Message published to Pub/Sub: 11140024005824161
+2024-05-14 17:23:41,624 - INFO - Message saved to Firestore with ID: 8ry9I2kTa6kFr8ECYyMR
+2024-05-14 17:23:41,626 - INFO - 127.0.0.1 - - [14/May/2024 17:23:41] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:41,650 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:23:40.955Z'}, 'timestamp': '2024-05-14T17:23:41.398607'}
+2024-05-14 17:23:41,769 - INFO - Acknowledged 1 messages.
+2024-05-14 17:23:41,770 - INFO - 127.0.0.1 - - [14/May/2024 17:23:41] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:41,988 - INFO - 127.0.0.1 - - [14/May/2024 17:23:41] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:44,252 - INFO - Message published to Pub/Sub: 11141037010176810
+2024-05-14 17:23:44,323 - INFO - Message saved to Firestore with ID: aJjpRe62ycbeKMOQXJdt
+2024-05-14 17:23:44,324 - INFO - 127.0.0.1 - - [14/May/2024 17:23:44] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:23:44,350 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:23:43.751Z'}, 'timestamp': '2024-05-14T17:23:44.116138'}
+2024-05-14 17:23:44,368 - INFO - Acknowledged 1 messages.
+2024-05-14 17:23:44,369 - INFO - 127.0.0.1 - - [14/May/2024 17:23:44] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:52,495 - INFO - 127.0.0.1 - - [14/May/2024 17:23:52] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:53,596 - INFO - 127.0.0.1 - - [14/May/2024 17:23:53] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:54,597 - INFO - 127.0.0.1 - - [14/May/2024 17:23:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:58,098 - INFO - 127.0.0.1 - - [14/May/2024 17:23:58] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:23:58,599 - INFO - 127.0.0.1 - - [14/May/2024 17:23:58] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:02,901 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:23:09.972Z'}, 'timestamp': '2024-05-14T17:23:10.392449'}
+2024-05-14 17:24:02,920 - INFO - Acknowledged 1 messages.
+2024-05-14 17:24:02,921 - INFO - 127.0.0.1 - - [14/May/2024 17:24:02] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:14,672 - INFO - 127.0.0.1 - - [14/May/2024 17:24:14] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:15,200 - INFO - 127.0.0.1 - - [14/May/2024 17:24:15] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:16,209 - INFO - 127.0.0.1 - - [14/May/2024 17:24:16] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:22,671 - INFO - 127.0.0.1 - - [14/May/2024 17:24:22] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:23,194 - INFO - 127.0.0.1 - - [14/May/2024 17:24:23] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:26,461 - INFO - 127.0.0.1 - - [14/May/2024 17:24:26] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:34,340 - INFO - 127.0.0.1 - - [14/May/2024 17:24:34] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:35,179 - INFO - 127.0.0.1 - - [14/May/2024 17:24:35] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:36,921 - INFO - 127.0.0.1 - - [14/May/2024 17:24:36] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:44,638 - INFO - 127.0.0.1 - - [14/May/2024 17:24:44] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:45,119 - INFO - 127.0.0.1 - - [14/May/2024 17:24:45] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:47,436 - INFO - 127.0.0.1 - - [14/May/2024 17:24:47] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:54,188 - INFO - 127.0.0.1 - - [14/May/2024 17:24:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:54,626 - INFO - 127.0.0.1 - - [14/May/2024 17:24:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:54,627 - INFO - 127.0.0.1 - - [14/May/2024 17:24:54] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:56,626 - INFO - 127.0.0.1 - - [14/May/2024 17:24:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:56,626 - INFO - 127.0.0.1 - - [14/May/2024 17:24:56] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:24:57,937 - INFO - 127.0.0.1 - - [14/May/2024 17:24:57] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:48,014 - INFO - 127.0.0.1 - - [14/May/2024 17:25:48] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:48,161 - INFO - 127.0.0.1 - - [14/May/2024 17:25:48] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:49,563 - INFO - 127.0.0.1 - - [14/May/2024 17:25:49] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:56,722 - INFO - 127.0.0.1 - - [14/May/2024 17:25:56] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:57,184 - INFO - 127.0.0.1 - - [14/May/2024 17:25:57] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:25:59,974 - INFO - 127.0.0.1 - - [14/May/2024 17:25:59] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:03,879 - INFO - 127.0.0.1 - - [14/May/2024 17:26:03] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:03,888 - INFO - 127.0.0.1 - - [14/May/2024 17:26:03] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:08,641 - INFO - 127.0.0.1 - - [14/May/2024 17:26:08] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:26:09,211 - INFO - Message published to Pub/Sub: 11139779278476056
+2024-05-14 17:26:09,270 - INFO - Message saved to Firestore with ID: 9lWN7zXKcEUhMW0DnK50
+2024-05-14 17:26:09,271 - INFO - 127.0.0.1 - - [14/May/2024 17:26:09] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:26:09,411 - INFO - 127.0.0.1 - - [14/May/2024 17:26:09] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:10,477 - INFO - 127.0.0.1 - - [14/May/2024 17:26:10] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:11,196 - INFO - 127.0.0.1 - - [14/May/2024 17:26:11] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:13,441 - INFO - 127.0.0.1 - - [14/May/2024 17:26:13] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:26:14,043 - INFO - Message published to Pub/Sub: 11141054352524234
+2024-05-14 17:26:14,070 - INFO - Message saved to Firestore with ID: UpJoSfVf6QFhBImdRJ3Y
+2024-05-14 17:26:14,071 - INFO - 127.0.0.1 - - [14/May/2024 17:26:14] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:26:14,125 - INFO - 127.0.0.1 - - [14/May/2024 17:26:14] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:19,980 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 'c', 'timestamp': '2024-05-14T14:26:08.638Z'}, 'timestamp': '2024-05-14T17:26:09.016845'}
+2024-05-14 17:26:20,093 - INFO - Acknowledged 1 messages.
+2024-05-14 17:26:20,093 - INFO - 127.0.0.1 - - [14/May/2024 17:26:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:20,983 - INFO - 127.0.0.1 - - [14/May/2024 17:26:20] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:21,408 - INFO - 127.0.0.1 - - [14/May/2024 17:26:21] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:26:24,488 - INFO - 127.0.0.1 - - [14/May/2024 17:26:24] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:27,077 - INFO - 127.0.0.1 - - [14/May/2024 17:29:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:27,250 - INFO - 127.0.0.1 - - [14/May/2024 17:29:27] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:28,642 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 'd', 'timestamp': '2024-05-14T14:26:13.434Z'}, 'timestamp': '2024-05-14T17:26:13.890461'}
+2024-05-14 17:29:28,767 - INFO - Acknowledged 1 messages.
+2024-05-14 17:29:28,767 - INFO - 127.0.0.1 - - [14/May/2024 17:29:28] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:38,517 - INFO - 127.0.0.1 - - [14/May/2024 17:29:38] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:39,126 - INFO - 127.0.0.1 - - [14/May/2024 17:29:39] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:42,147 - INFO - 127.0.0.1 - - [14/May/2024 17:29:42] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:29:42,809 - INFO - Message published to Pub/Sub: 11141086753370964
+2024-05-14 17:29:42,859 - INFO - Message saved to Firestore with ID: zPiurD86qnSt9YVG6RRc
+2024-05-14 17:29:42,860 - INFO - 127.0.0.1 - - [14/May/2024 17:29:42] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:29:42,900 - INFO - 127.0.0.1 - - [14/May/2024 17:29:42] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:44,733 - INFO - 127.0.0.1 - - [14/May/2024 17:29:44] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:29:48,663 - INFO - 127.0.0.1 - - [14/May/2024 17:29:48] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:29:49,241 - INFO - Message published to Pub/Sub: 11140714907170632
+2024-05-14 17:29:49,268 - INFO - Message saved to Firestore with ID: CGKv58xq9Y1JeoC57cPW
+2024-05-14 17:29:49,269 - INFO - 127.0.0.1 - - [14/May/2024 17:29:49] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:29:49,614 - INFO - 127.0.0.1 - - [14/May/2024 17:29:49] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:13,042 - INFO - 127.0.0.1 - - [14/May/2024 17:30:13] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:13,226 - INFO - 127.0.0.1 - - [14/May/2024 17:30:13] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:14,580 - INFO - 127.0.0.1 - - [14/May/2024 17:30:14] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:15,230 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T14:29:42.142Z'}, 'timestamp': '2024-05-14T17:29:42.662820'}
+2024-05-14 17:30:15,347 - INFO - Acknowledged 1 messages.
+2024-05-14 17:30:15,348 - INFO - 127.0.0.1 - - [14/May/2024 17:30:15] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:26,877 - INFO - 127.0.0.1 - - [14/May/2024 17:30:26] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:28,693 - INFO - 127.0.0.1 - - [14/May/2024 17:30:28] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:29,797 - INFO - 127.0.0.1 - - [14/May/2024 17:30:29] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:30,272 - INFO - Message published to Pub/Sub: 11141087378990596
+2024-05-14 17:30:30,326 - INFO - Message saved to Firestore with ID: yfMoFiDVKce3kxhVOFMb
+2024-05-14 17:30:30,327 - INFO - 127.0.0.1 - - [14/May/2024 17:30:30] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:35,011 - INFO - 127.0.0.1 - - [14/May/2024 17:30:35] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:36,043 - INFO - Processed message: {'message': {'author': 'gEPooI5KujMcg8QMChAU32qh2ql1', 'text': 's', 'timestamp': '2024-05-14T14:30:29.790Z'}, 'timestamp': '2024-05-14T17:30:30.241376'}
+2024-05-14 17:30:36,211 - INFO - Acknowledged 1 messages.
+2024-05-14 17:30:36,213 - INFO - 127.0.0.1 - - [14/May/2024 17:30:36] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:30:37,247 - INFO - 127.0.0.1 - - [14/May/2024 17:30:37] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:37,846 - INFO - Message published to Pub/Sub: 11141256496114816
+2024-05-14 17:30:37,886 - INFO - Message saved to Firestore with ID: KKYNK6BcA4BkGXonPtcv
+2024-05-14 17:30:37,886 - INFO - 127.0.0.1 - - [14/May/2024 17:30:37] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:41,433 - INFO - 127.0.0.1 - - [14/May/2024 17:30:41] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:42,041 - INFO - Message published to Pub/Sub: 11141192735237567
+2024-05-14 17:30:42,169 - INFO - Message saved to Firestore with ID: b4Z3T5jV1dOIxdOCWtDN
+2024-05-14 17:30:42,170 - INFO - 127.0.0.1 - - [14/May/2024 17:30:42] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:44,593 - INFO - Message published to Pub/Sub: 11141361046619782
+2024-05-14 17:30:44,637 - INFO - Message saved to Firestore with ID: jMrUt2T62BwO8s6fHzKU
+2024-05-14 17:30:44,638 - INFO - 127.0.0.1 - - [14/May/2024 17:30:44] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:47,455 - INFO - 127.0.0.1 - - [14/May/2024 17:30:47] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:30:48,016 - INFO - Message published to Pub/Sub: 11139549018581156
+2024-05-14 17:30:48,064 - INFO - Message saved to Firestore with ID: DGwCFXGT2FzUs0UaWbgU
+2024-05-14 17:30:48,064 - INFO - 127.0.0.1 - - [14/May/2024 17:30:48] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:31:07,877 - INFO - 127.0.0.1 - - [14/May/2024 17:31:07] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:31:08,393 - INFO - 127.0.0.1 - - [14/May/2024 17:31:08] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:31:09,210 - INFO - 127.0.0.1 - - [14/May/2024 17:31:09] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:31:09,588 - INFO - 127.0.0.1 - - [14/May/2024 17:31:09] "OPTIONS /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:31:09,869 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 's', 'timestamp': '2024-05-14T14:29:48.659Z'}, 'timestamp': '2024-05-14T17:29:49.090013'}
+2024-05-14 17:31:09,870 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 's', 'timestamp': '2024-05-14T14:30:37.243Z'}, 'timestamp': '2024-05-14T17:30:37.645043'}
+2024-05-14 17:31:09,870 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 'd', 'timestamp': '2024-05-14T14:30:47.452Z'}, 'timestamp': '2024-05-14T17:30:47.880051'}
+2024-05-14 17:31:09,990 - INFO - Acknowledged 3 messages.
+2024-05-14 17:31:09,991 - INFO - 127.0.0.1 - - [14/May/2024 17:31:09] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:31:10,127 - INFO - Message published to Pub/Sub: 11140068329544891
+2024-05-14 17:31:10,164 - INFO - Message saved to Firestore with ID: pMd1HE8qzxj0m3jxDIeJ
+2024-05-14 17:31:10,165 - INFO - 127.0.0.1 - - [14/May/2024 17:31:10] "POST /messages/publish HTTP/1.1" 200 -
+2024-05-14 17:32:11,988 - INFO - 127.0.0.1 - - [14/May/2024 17:32:11] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:32:12,387 - INFO - 127.0.0.1 - - [14/May/2024 17:32:12] "OPTIONS /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:32:13,589 - INFO - 127.0.0.1 - - [14/May/2024 17:32:13] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:32:14,331 - INFO - Processed message: {'message': {'author': 'kcA4QLnAfvcBnaxExxlmKqw1KIu2', 'text': 's', 'timestamp': '2024-05-14T14:31:09.584Z'}, 'timestamp': '2024-05-14T17:31:09.989829'}
+2024-05-14 17:32:14,450 - INFO - Acknowledged 1 messages.
+2024-05-14 17:32:14,450 - INFO - 127.0.0.1 - - [14/May/2024 17:32:14] "GET /messages/subscribe HTTP/1.1" 200 -
+2024-05-14 17:33:12,256 - INFO - Message published to Pub/Sub: 11140085278049979
+2024-05-14 17:33:13,048 - INFO - Message saved to Firestore with ID: A1HhjwTHGVIwrPIDWtDF

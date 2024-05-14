@@ -40,15 +40,7 @@ class FlaskTestCase(unittest.TestCase):
         self.assertIn('Message published successfully', json.loads(response.data)['message'])
         self.logout(token)
 
-    # def test_publish_message_without_login(self):
-    #     # Testing publish without logging in
-    #     response = self.client.post('/message/publish', json={
-    #         'receiver_id': 'user456',
-    #         'message': 'Hello, World'
-    #     })
-    #     print(response)
-    #     self.assertEqual(response.status_code, 401)
-    #     self.assertIn('Unauthorized', response.json['error'])
+
 
     def test_publish_message_with_incomplete_data(self):
         # Assume we have logged in and got a token
