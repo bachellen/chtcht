@@ -119,3 +119,32 @@ def subscribe():
     except Exception as e:
         current_app.logger.error(f"Failed to subscribe and pull messages: {str(e)}")
         return jsonify({'status': 'error', 'message': str(e)}), 500
+    
+@message_blueprint.route('/get_messages', methods=['GET'])
+def get_messages():
+    receiver_id = request.args.get('receiver_id')
+    if not receiver_id:
+        return jsonify({"error": "Receiver ID is required"}), 400
+    token = request.headers.get('Authorization').split('Bearer ')[1]
+    user = auth.get_account_info(token)
+    user_id = user['users'][0]['localId']
+    try:
+        # Query Firestore for messages where receiver_id matches
+        messages_ref = db.collection('messages')
+        # Get messages where sender_id is the current user and receiver_id is the receiver_id
+        sent_messages_query = messages_ref.where('sender_id', '==', user_id).where('receiver_id', '==', receiver_id)
+        sent_messages = sent_messages_query.stream()
+
+        # Get messages where receiver_id is the current user and sender_id is the receiver_id
+        received_messages_query = messages_ref.where('receiver_id', '==', user_id).where('sender_id', '==', receiver_id)
+        received_messages = received_messages_query.stream()
+
+        messages = []
+        for doc in sent_messages:
+            messages.append(doc.to_dict())
+        for doc in received_messages:
+            messages.append(doc.to_dict())
+
+        return jsonify({"messages": messages}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

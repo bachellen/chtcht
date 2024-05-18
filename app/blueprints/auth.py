@@ -1,11 +1,13 @@
 # app/blueprints/auth.py
 
-from datetime import timedelta
-from flask import Blueprint, app, request, jsonify, session
+from flask import Blueprint, request, jsonify, session
 import pyrebase
 from google.cloud import firestore
 import os
 from dotenv import load_dotenv
+from ..pubsub_client import publisher, project_id
+
+topic_path = publisher.topic_path(project_id, 'user-presence')
 
 
 auth_blueprint = Blueprint('auth', __name__)
@@ -51,7 +53,8 @@ def login():
     data = request.json
     try:
         user = auth.sign_in_with_email_and_password(data['email'], data['password'])
-
+        future = publisher.publish(topic_path, b'Online', user_id=user['localId'])
+        future.result()
         if user:
             return jsonify({'message': 'Login successful', 'token': user['idToken'], 'user_id': user['localId']}), 200
         else:
@@ -70,7 +73,10 @@ def reset_password():
     
 @auth_blueprint.route('/logout', methods=['POST'])
 def logout():
+    user = auth.current_user
     auth.current_user = None
+    future = publisher.publish(topic_path, b'Offline', user_id=user['localId'])
+    future.result()
     return jsonify({'message': 'Logged out successfully'}), 200
 
 def save_user_to_firestore(user_data):
