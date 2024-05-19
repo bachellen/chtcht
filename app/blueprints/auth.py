@@ -40,7 +40,7 @@ def register():
             'email': data['email'],
             'displayName': data.get('displayName', ''),
             'createdAt': firestore.SERVER_TIMESTAMP,  # Sets the server timestamp
-            'additionalInfo': data.get('additionalInfo', {})  # Optional additional info
+            'user_id': data.get('user_id', user['localId'])  # Optional additional info
         }
         # Save user data in Firestore
         db.collection('users').document(user['localId']).set(user_data)
@@ -53,9 +53,12 @@ def login():
     data = request.json
     try:
         user = auth.sign_in_with_email_and_password(data['email'], data['password'])
-        future = publisher.publish(topic_path, b'Online', user_id=user['localId'])
+        future = publisher.publish(topic_path, b'Online', user_id=user['localId'],status='Online')
         future.result()
         if user:
+            # Update Firestore status to 'Online'
+            user_ref = db.collection('users').document(user['localId'])
+            user_ref.update({'status': 'Online'})
             return jsonify({'message': 'Login successful', 'token': user['idToken'], 'user_id': user['localId']}), 200
         else:
             return jsonify({'error': 'Invalid credentials'}), 401
@@ -74,10 +77,17 @@ def reset_password():
 @auth_blueprint.route('/logout', methods=['POST'])
 def logout():
     user = auth.current_user
-    auth.current_user = None
-    future = publisher.publish(topic_path, b'Offline', user_id=user['localId'])
-    future.result()
-    return jsonify({'message': 'Logged out successfully'}), 200
+    if user:
+        future = publisher.publish(topic_path, b'Offline', user_id=user['localId'], status="Offline")
+        future.result()
+        # Update Firestore status to 'Offline'
+        user_ref = db.collection('users').document(user['localId'])
+        user_ref.update({'status': 'Offline'})
+        
+        auth.current_user = None
+        return jsonify({'message': 'Logged out successfully'}), 200
+    else:
+        return jsonify({'error': 'No user currently logged in'}), 400
 
 def save_user_to_firestore(user_data):
     db.collection('users').add(user_data)
@@ -93,3 +103,25 @@ def get_user():
         return jsonify({'user': user}), 200
     except Exception as e:
         return jsonify({'error': 'Failed to retrieve user', 'details': str(e)}), 400
+    
+@auth_blueprint.route('/users', methods=['GET'])
+def get_users():
+    token = request.headers.get('Authorization').split('Bearer ')[1]
+    user = auth.get_account_info(token)
+    user_id = user['users'][0]['localId']
+    if not user_id:
+        return jsonify({'error': 'User not logged in'}), 401
+
+    try:
+        users_ref = db.collection('users')
+        users = users_ref.stream()
+        all_users = []
+
+        for user in users:
+            user_data = user.to_dict()
+            if user_data.get('user_id') != user_id:
+                all_users.append(user_data)
+
+        return jsonify({'users': all_users}), 200
+    except Exception as e:
+        return jsonify({'error': 'Failed to retrieve users', 'details': str(e)}), 400
