@@ -20,7 +20,7 @@ class FlaskTestCase(unittest.TestCase):
 
     def test_user_registration(self):
         response = self.client.post('/auth/register', json={
-            'email': 'ne2wone@example.com',
+            'email': 'ne2wwone@example.com',
             'password': 'newpassword123'
         })
         self.assertEqual(response.status_code, 201)

@@ -10,7 +10,6 @@ class FlaskTestCase(unittest.TestCase):
         })
         self.client = self.app.test_client()
 
-
     def login_user(self):
         # Mock logging in a user and getting a token
         response = self.client.post('/auth/login', json={
@@ -18,7 +17,7 @@ class FlaskTestCase(unittest.TestCase):
             'password': 'test123456'
         })
         return response.json.get('token')
-    
+
     def logout(self, token):
         return self.client.post('/auth/logout', headers={
             'Authorization': f'Bearer {token}'
@@ -40,10 +39,8 @@ class FlaskTestCase(unittest.TestCase):
         self.assertIn('Message published successfully', json.loads(response.data)['message'])
         self.logout(token)
 
-
-
     def test_publish_message_with_incomplete_data(self):
-        # Assume we have logged in and got a token
+        # Log in and get a token
         token = self.login_user()
 
         # Testing message publishing with missing fields
@@ -54,6 +51,28 @@ class FlaskTestCase(unittest.TestCase):
         })
         self.assertEqual(response.status_code, 400)
         self.assertIn('Missing required data', response.json['error'])
+
+    def test_user_online_status(self):
+        # Log in and get a token
+        token = self.login_user()
+
+        # Simulate user going online
+        response = self.client.post('/users/online', headers={
+            'Authorization': f'Bearer {token}'
+        })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('User is now online',json.loads(response.data)['message'])
+
+        # Simulate user going offline
+        response = self.client.post('/users/offline', headers={
+            'Authorization': f'Bearer {token}'
+        })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('User is now offline', json.loads(response.data)['message'])
+
+        self.logout(token)
 
 if __name__ == '__main__':
     unittest.main()
